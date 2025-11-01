@@ -1,0 +1,15 @@
+## Interface: 11200
+## Title: NoshuWeapons
+## Author: Noshu
+## Version: 1.0
+## Notes: NoshuWeapons - Weapon Functions
+## Dependencies: NoshuCore
+
+--Characters
+Characters\RetroWow\RetroNoshu.lua
+
+--Managers
+Managers\WeaponManager.lua
+
+--Main
+NoshuWeapons.lua

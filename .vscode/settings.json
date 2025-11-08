@@ -5,6 +5,8 @@
         "UnitName",
         "SpellInfo",
         "UnitExists",
-        "UseItemByName"
+        "UseItemByName",
+        "DEFAULT_CHAT_FRAME",
+        "GetShapeshiftFormInfo"
     ]
 }

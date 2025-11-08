@@ -7,6 +7,7 @@
 
 --Characters
 Characters\RetroWow\RetroNoshu.lua
+Characters\RetroWow\RetroNosha.lua
 
 --Managers
 Managers\WeaponManager.lua

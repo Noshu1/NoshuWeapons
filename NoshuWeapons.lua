@@ -17,6 +17,7 @@ end
 
 function NoshuWeapons:InitRetroWowCharacters()
     self.RetroNoshu = RetroNoshu:New()
+    self.RetroNosha = RetroNosha:New()
 end
 
 

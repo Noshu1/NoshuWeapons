@@ -17,6 +17,12 @@ local function HandleRetroWowWeapons(playerName, casterGuid, targetGuid, castTyp
             spellName, spellRank, castDuration)
         return
     end
+
+    if(string.AreEqualIgnoreCase(playerName, "Nosha")) then
+        NoshuWeapons.RetroNosha:HandleWeapons(casterGuid, targetGuid, castType, spellId,
+            spellName, spellRank, castDuration)
+        return
+    end
 end
 
 function WeaponManager:HandleWeapons(casterGuid, targetGuid, castType, spellId, castDuration)
@@ -25,6 +31,8 @@ function WeaponManager:HandleWeapons(casterGuid, targetGuid, castType, spellId, 
      if(exists and not string.AreEqualIgnoreCase(playerGuid, casterGuid)) then
         return
     end
+
+    PrintUnitCastEvent(casterGuid, targetGuid, castType, spellId, castDuration)
 
     local realmName = GetRealmName()
     local playerName = UnitName("player")
@@ -35,4 +43,13 @@ function WeaponManager:HandleWeapons(casterGuid, targetGuid, castType, spellId, 
             castDuration)
         return
     end
+end
+
+function PrintUnitCastEvent(casterGUID, targetGUID, castType, spellId, castDuration)
+  DEFAULT_CHAT_FRAME:AddMessage( 
+" - casterGUID: " .. casterGUID .. 
+" - targetGUID: " .. targetGUID .. 
+" - Event: " .. castType .. 
+" - SpellID: " .. spellId .. 
+" - castTime: " .. castDuration)
 end

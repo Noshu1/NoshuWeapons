@@ -26,11 +26,25 @@ local function EquipSpellDmgWeapons()
     UseItemByName(idolOfTheMoon)
 end
 
+local function InBearForm()
+    local _, _, active, _ = GetShapeshiftFormInfo(1);
+    return active
+end
+
+local function InCatForm()
+    local _, _, active, _ = GetShapeshiftFormInfo(3);
+    return active
+end
+
 function RetroNosha:HandleWeapons(casterGuid, targetGuid, castType, spellId, spellName,
         spellRank, castDuration)
 
     if (druidForms[spellName]) then
         EquipMeleeWeapons()
+        return
+    end
+
+    if(InBearForm() or InCatForm()) then
         return
     end
 

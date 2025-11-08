@@ -32,7 +32,7 @@ function WeaponManager:HandleWeapons(casterGuid, targetGuid, castType, spellId, 
         return
     end
 
-    PrintUnitCastEvent(casterGuid, targetGuid, castType, spellId, castDuration)
+    --PrintUnitCastEvent(casterGuid, targetGuid, castType, spellId, castDuration)
 
     local realmName = GetRealmName()
     local playerName = UnitName("player")

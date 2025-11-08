@@ -18,16 +18,6 @@ local druidForms = {
     ["Bear Form"] = true
 }
 
-local function InBearForm()
-    local _, _, isActive, _ = GetShapeshiftFormInfo(1);
-    return isActive
-end
-
-local function InCatForm()
-    local _, _, isActive, _ = GetShapeshiftFormInfo(3);
-    return isActive
-end
-
 local function EquipMeleeWeapons()
     UseItemByName(idolOfBrutality)
 end
@@ -38,10 +28,6 @@ end
 
 function RetroNosha:HandleWeapons(casterGuid, targetGuid, castType, spellId, spellName,
         spellRank, castDuration)
-
-    if(InBearForm() or InCatForm()) then
-        return
-    end
 
     if (druidForms[spellName]) then
         EquipMeleeWeapons()

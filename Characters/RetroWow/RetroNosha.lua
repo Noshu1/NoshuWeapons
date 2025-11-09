@@ -44,7 +44,7 @@ function RetroNosha:HandleWeapons(casterGuid, targetGuid, castType, spellId, spe
         return
     end
 
-    if(InBearForm() or InCatForm()) then
+    if(InBearForm() or InCatForm() or string.AreEqualIgnoreCase(castType, "MAINHAND")) then
         return
     end
 

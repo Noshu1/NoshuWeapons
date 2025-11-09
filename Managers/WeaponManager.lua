@@ -49,7 +49,7 @@ function PrintUnitCastEvent(casterGUID, targetGUID, castType, spellId, castDurat
   DEFAULT_CHAT_FRAME:AddMessage( 
 " - casterGUID: " .. casterGUID .. 
 " - targetGUID: " .. targetGUID .. 
-" - Event: " .. castType .. 
-" - SpellID: " .. spellId .. 
-" - castTime: " .. castDuration)
+" - CastType: " .. castType .. 
+" - SpellId: " .. spellId .. 
+" - castDuration: " .. castDuration)
 end

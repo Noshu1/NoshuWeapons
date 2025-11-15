@@ -36,6 +36,26 @@ local function InCatForm()
     return active
 end
 
+local function ShouldIgnoreWeaponSwap(spellName, castType)
+    if(InBearForm()) then
+        return true
+    end
+
+    if(InCatForm) then
+        return true
+    end
+
+    if(string.AreEqualIgnoreCase(castType, "MAINHAND")) then
+        return true
+    end
+
+    if(string.AreEqualIgnoreCase(spellName, "Nature's Swiftness")) then
+        return true;
+    end
+
+    return false
+end
+
 function RetroNosha:HandleWeapons(casterGuid, targetGuid, castType, spellId, spellName,
         spellRank, castDuration)
 
@@ -44,7 +64,7 @@ function RetroNosha:HandleWeapons(casterGuid, targetGuid, castType, spellId, spe
         return
     end
 
-    if(InBearForm() or InCatForm() or string.AreEqualIgnoreCase(castType, "MAINHAND")) then
+    if(ShouldIgnoreWeaponSwap(spellName, castType)) then
         return
     end
 

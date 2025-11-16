@@ -41,7 +41,7 @@ local function ShouldIgnoreWeaponSwap(spellName, castType)
         return true
     end
 
-    if(InCatForm) then
+    if(InCatForm()) then
         return true
     end
 

@@ -53,6 +53,10 @@ local function ShouldIgnoreWeaponSwap(spellName, castType)
         return true;
     end
 
+    if(string.AreEqualIgnoreCase(spellName, "War Stomp")) then
+        return true;
+    end
+
     return false
 end
 
